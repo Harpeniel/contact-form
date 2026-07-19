@@ -242,6 +242,11 @@ form h1 {
   }
 }
 
+#general-enquiry-query,
+#support-request-query {
+  flex: 1;
+}
+
 label span, legend {
   display: block;
   margin-bottom: 0.625rem;

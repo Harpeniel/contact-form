@@ -32,6 +32,10 @@ form {
         flex-direction: column;
     }
 }
+#general-enquiry-query,
+#support-request-query {
+    flex: 1;
+}
 label span, legend {
     display: block;
     margin-bottom: a.rem(10px);
