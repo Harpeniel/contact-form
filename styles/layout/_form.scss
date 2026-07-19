@@ -1,0 +1,70 @@
+@use '../abstracts/' as a;
+form {
+    background: var(--white);
+    width: min(100% - a.rem(40px), a.rem(700px));
+    padding: a.rem(20px);
+    border-radius: a.rem(20px);
+    h1 {
+        color: var(--grey900);
+        font-size: a.rem(32px);
+        font-weight: 700;
+        margin-bottom: a.rem(20px);
+    }
+}
+#name-fieldset {
+    @include a.breakpoint('large') {
+        display: flex;
+        gap: a.rem(15px);
+    }
+    label {
+        flex: 1;
+    }
+}
+:not(div,section) > label , fieldset{
+    display: block;
+    margin-bottom: a.rem(20px);
+}
+
+.query-fieldset__content {
+    display: flex;
+    gap: a.rem(15px);
+    @include a.breakpoint-down('medium') {
+        flex-direction: column;
+    }
+}
+label span, legend {
+    display: block;
+    margin-bottom: a.rem(10px);
+}
+textarea {
+    @include a.breakpoint-down('medium') {
+        min-height: a.rem(200px);
+    }
+    @include a.breakpoint('large') {
+        min-height: a.rem(100px);
+    }
+    width: 100%;
+    border: solid 1px var(--grey500);
+    border-radius: a.rem(8px);
+    resize: none;
+    cursor: pointer;
+    &:focus {
+        outline: solid a.rem(2px) var(--green600);
+    }
+}
+#cgu-section {
+    padding-left: 0;
+    margin-bottom: a.rem(20px);
+    input:checked {
+        color: var(--white);
+        background: var(--green600);
+    }
+}
+input[type='submit'] {
+    color: var(--white);
+    background: var(--green600);
+    transition: all .3s;
+    &:hover {
+        background: var(--grey900);
+    }
+}

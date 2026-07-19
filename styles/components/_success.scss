@@ -1,0 +1,24 @@
+@use '../abstracts/' as a;
+.success {
+    position: absolute;
+    top: a.rem(30px);
+    left: 50%;
+    color: var(--white);
+    background: var(--grey900);
+    padding: a.rem(20px);
+    border-radius: a.rem(15px);
+
+    &__header {
+        display: flex;
+        gap: a.rem(10px);
+        margin-bottom: a.rem(15px);
+        &__icon {
+            width: a.rem(20px);
+            height: a.rem(21px);
+        }
+        &__title {
+            font-size: a.rem(18px);
+            font-weight: 700;
+        }
+    }
+}

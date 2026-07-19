@@ -1,0 +1,105 @@
+@use '../abstracts/' as a;
+
+input,
+div:has(input) label {
+  cursor: pointer;
+}
+
+input,
+div:has(input):not(#cgu-section) {
+  border: solid 1px var(--grey500);
+  border-radius: a.rem(8px);
+
+}
+
+input:not([type='radio'], [type='checkbox']) {
+  display: block;
+  width: 100%;
+  padding: a.rem(15px);
+}
+
+input:focus {
+  outline: solid 2px var(--green600);
+}
+
+div:has(input):not(#cgu-section) {
+  display: flex;
+  align-items: center;
+  column-gap: a.rem(10px);
+  padding: a.rem(15px);
+  transition: all .3s;
+}
+
+.cgu-section__content {
+  display: flex;
+  align-items: center;
+  column-gap: a.rem(10px);
+}
+
+div:has(input[type="radio"]:checked) {
+  background-color: var(--green200);
+  outline: solid a.rem(2px) var(--green600);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: a.rem(20px);
+  height: a.rem(20px);
+  border: a.rem(2px) solid var(--grey500);
+  background-color: var(--white);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  border-radius: a.rem(4px);
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background-color: var(--green600);
+  border-color: var(--green600);
+}
+
+
+input[type="radio"]::before {
+  content: "";
+  width: a.rem(12px);
+  height: a.rem(12px);
+  border: solid a.rem(3px) #fff;
+  border-radius: 50%;
+  transform: scale(0);
+  /* Mask it by default */
+  transition: transform 0.2s ease;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+  /* Show when it's checked */
+}
+
+
+input[type="checkbox"]::before {
+  content: "";
+  width: a.rem(6px);
+  height: a.rem(10px);
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  /* Create angle of the check*/
+  transform: translateY(-25%) rotate(45deg) scale(0);
+  /* Align and mask by default */
+  transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateY(-25%) rotate(45deg) scale(1);
+  /* Show when checked */
+}

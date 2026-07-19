@@ -1,0 +1,20 @@
+@use '../abstracts/' as a;
+
+body {
+    display: grid;
+    place-items: center;
+    color: var(--grey500);
+    font-family: 'Karla';
+    font-weight: 400;
+    background: var(--green200);
+}
+
+#firstname-error-message,
+#lastname-error-message,
+#email-error-message,
+#query-type-error-message,
+#message-error-message,
+#cgu-error-message {
+    color: var(--red);
+    margin-top: a.rem((8px));
+}

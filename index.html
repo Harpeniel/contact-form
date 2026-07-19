@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./script/app.js" defer></script>
+  <title>Frontend Mentor | Contact form</title>
+
+</head>
+
+<body>
+  <form action="">
+    <h1> Contact Us
+    </h1>
+    <fieldset id="name-fieldset">
+      <label for="firstname">
+        <span>First Name *</span>
+        <input type="text" id="firstname" aria-invalid="false"
+          aria-describedby="firstname-description firstname-error-message" required>
+        <p id="firstname-description" class="sr-only">Enter your firstname</p>
+        <span id="firstname-error-message" class="sr-only">The field is required</span>
+      </label>
+      <label for="lastname">
+        <span>Last Name *</span>
+        <input type="text" id="lastname" aria-invalid="false"
+          aria-describedby="lastname-description lastname-error-message" required>
+        <p id="lastname-description" class="sr-only">Enter your lastname</p>
+        <span id="lastname-error-message" class="sr-only">The field is required</span>
+      </label>
+    </fieldset>
+    <label for="email">
+      <span>Email Address *</span>
+      <input type="email" id="email" aria-invalid="false" aria-describedby="email-description email-error-message">
+      <p id="email-description" class="sr-only">Enter your email</p>
+      <span id="email-error-message" class="sr-only">Please enter a valid email address</span>
+    </label>
+    <fieldset id="query-fieldset">
+      <legend>Query Type *</legend>
+      <section class="query-fieldset__content">
+        <div id="general-enquiry-query">
+          <input type="radio" id="general-enquiry" name="query-type" aria-invalid="false"
+            aria-describedby="query-type-error-message" required>
+          <label for="general-enquiry">General Enquiry</label>
+        </div>
+
+        <div id="support-request-query">
+          <input type="radio" id="support-request" name="query-type" aria-invalid="false"
+            aria-describedby="query-type-error-message" required>
+          <label for="support-request">Support request</label>
+        </div>
+      </section>
+      <span id="query-type-error-message" class="sr-only">Please select a query type</span>
+    </fieldset>
+    </div>
+    <label for="message">
+      <span>Message *</span>
+      <textarea name="message" id="message" aria-invalid="false"
+        aria-describedby="message-description message-error-message" required></textarea>
+      <p id="message-description" class="sr-only">Write your message here</p>
+      <span id="message-error-message" class="sr-only">This field is required</span>
+    </label>
+    <div id="cgu-section">
+      <section class="cgu-section__content">
+        <input type="checkbox" id="cgu" name="cgu" aria-invalid="false" aria-describedby="cgu-error-message" required>
+        <label for="cgu"> I consent to being contacted by the team *
+        </label>
+      </section>
+      <span id="cgu-error-message" class="sr-only"> To submit this form, please consent to being contacted
+    </div>
+    </span>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <template id="success-template">
+    <section class="success">
+      <div class="success__header">
+        <img class="success__header__icon" src="./assets/images/icon-success-check.svg" alt="an icon of checkbox"
+          width="20" height="21">
+        <h1 class="success__header__title">Message Sent!</h1>
+      </div>
+      <p class="success__message">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+    </section>
+</body>
+</template>
+
+</html>
